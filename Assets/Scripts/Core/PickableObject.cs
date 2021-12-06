@@ -13,6 +13,8 @@ public class PickableObject : MonoBehaviour
     private bool touched = false;
     PlayerInput playerInput;
     Vector3 orbScale;
+    public Light orbTorch;
+
 
 
 
@@ -62,8 +64,13 @@ public class PickableObject : MonoBehaviour
                 transform.parent = playerCam;
                 transform.DOLocalMove(new Vector3(0, -0.1f, 2.5f), 0.3f);
                 transform.localScale = orbScale;
+                
                 beingCarried = true;
+                //c = !orbTorch.enabled; // Inverser l'etat de la lumiere
+
                 GetComponent<OrbController>().Pickup();
+                // orbTorch.enabled = !orbTorch.enabled; // Inverser l'etat de la lumiere
+
             }
 
             else if (beingCarried)
@@ -82,7 +89,21 @@ public class PickableObject : MonoBehaviour
                 }
             }
 
+            else
+            {
+                orbTorch.enabled = false;
+            }
+
+            if(beingCarried) {
+                orbTorch.enabled = true;
+            } else {
+                orbTorch.enabled = false;
+            }
+
+
+
         }
+
 
         // si on porte objet 
         if (touched)
