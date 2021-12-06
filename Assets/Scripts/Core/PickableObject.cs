@@ -13,7 +13,7 @@ public class PickableObject : MonoBehaviour
     private bool touched = false;
     PlayerInput playerInput;
     Vector3 orbScale;
-    public Light orbTorch;
+    //public Light orbTorch;
 
 
 
@@ -64,7 +64,7 @@ public class PickableObject : MonoBehaviour
                 transform.parent = playerCam;
                 transform.DOLocalMove(new Vector3(0, -0.1f, 2.5f), 0.3f);
                 transform.localScale = orbScale;
-                
+
                 beingCarried = true;
                 //c = !orbTorch.enabled; // Inverser l'etat de la lumiere
 
@@ -77,29 +77,35 @@ public class PickableObject : MonoBehaviour
             {
                 if (transform.parent == playerCam)
                 {
+                    GetComponent<OrbController>().Drop();
                     GetComponent<Rigidbody>().isKinematic = false;
                     transform.parent = null;
                     transform.localScale = orbScale;
                     beingCarried = false;
                 }
-                else
+                else if (transform.parent != playerCam)
+
                 {
                     beingCarried = true;
 
                 }
             }
+            /*
+                        else
+                        {
+                            orbTorch.enabled = false;
+                        }
 
-            else
-            {
-                orbTorch.enabled = false;
-            }
+                        if(beingCarried) {
+                            objTorch.SetActive(orbTorch.activeSelf);
+                            Debug.Log(orbTorch.activeSelf);
+                            orbTorch.enabled = true;
+                        } else {
+                            orbTorch.enabled = false;
+                            objTorch.SetActive(!orbTorch.activeSelf);
 
-            if(beingCarried) {
-                orbTorch.enabled = true;
-            } else {
-                orbTorch.enabled = false;
-            }
-
+                        }
+            */
 
 
         }

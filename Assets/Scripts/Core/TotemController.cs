@@ -28,10 +28,9 @@ public class TotemController : MonoBehaviour
     {
 
 
-        if (Vector3.Distance(transform.position, totem.orb.transform.position) <= 5f)
+        if (!totem.isPickup && totem.orb &&Vector3.Distance(transform.position, totem.orb.transform.position) <= 5f)
         {
-            if (totem.isPickup && playerInput.CharacterControls.Grab.triggered)
-            {
+          
                 for (int i = 0; i < 3; i++)
                 {
                     if (recipients[i].childCount == 0 && totem.orb.CompareTag(totem.name))
@@ -44,8 +43,7 @@ public class TotemController : MonoBehaviour
                     }
                     else if (!totem.orb.CompareTag(totem.name))
                     {
-                        Transform camera = GameObject.Find("Main Camera").transform;
-                        totem.orb.transform.parent = camera;
+
                         totem.orb.transform.DOShakeRotation(0.5f, 0.5f, 10, fadeOut: true);
                     }
                     if (checkTotem() && !isEventSent)
@@ -54,15 +52,8 @@ public class TotemController : MonoBehaviour
                         isEventSent = true;
                     }
                 }
-            }
         }
     }
-
-    public void placeOrb()
-    {
-
-    }
-
     public bool checkTotem()
     {
         for (int i = 0; i < recipients.Length; ++i)
