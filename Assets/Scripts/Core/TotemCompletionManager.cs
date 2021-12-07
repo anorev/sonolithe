@@ -9,8 +9,6 @@ public class TotemCompletionManager : MonoBehaviour
     public TotemCompletion[] totemCompletionArray;
     public List<bool> booleanArray;
 
-    public Light Spotlight;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +25,7 @@ public class TotemCompletionManager : MonoBehaviour
 
         if (booleanArray.Count >= totemCompletionArray.Length)
         {
-            Spotlight.DOIntensity(195, 5);
+            Debug.Log("Tous les totems sont complets");
 
         }
     }

@@ -20,7 +20,7 @@ public class TotemController : MonoBehaviour
     void Start()
     {
         recipients = transform.Find("Recipients").GetComponentsInChildren<Transform>();
-        orbScale = new Vector3(3.2f,3.2f,3.2f);
+        orbScale = new Vector3(4f, 4f, 4f);
     }
 
     // Update is called once per frame

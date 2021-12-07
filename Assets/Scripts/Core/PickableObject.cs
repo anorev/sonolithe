@@ -23,7 +23,7 @@ public class PickableObject : MonoBehaviour
     {
         // initially set reference variables
         playerInput = new PlayerInput();
-        orbScale = new Vector3(3.2f, 3.2f, 3.2f);
+        orbScale = new Vector3(4f, 4f, 4f);
 
     }
 
@@ -44,7 +44,7 @@ public class PickableObject : MonoBehaviour
         float dist = Vector3.Distance(transform.position, player.position);
 
         //si inferier ou �gal � 1.9 == on peut ramasser 
-        if (dist <= 1.9f)
+        if (dist <= 4f)
         {
             hasPlayer = true;
         }
