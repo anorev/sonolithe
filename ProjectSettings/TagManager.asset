@@ -7,6 +7,7 @@ TagManager:
   - Totem1
   - Totem2
   - Totem3
+  - UI
   layers:
   - Default
   - TransparentFX
