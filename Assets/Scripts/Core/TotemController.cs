@@ -10,6 +10,9 @@ public class TotemController : MonoBehaviour
     PlayerInput playerInput;
     Vector3 orbScale;
     private bool isEventSent;
+
+    [SerializeField]
+    public AudioSource orbEnter; 
     // Start is called before the first frame update
     void Awake()
     {
@@ -37,8 +40,10 @@ public class TotemController : MonoBehaviour
                     {
                         totem.orb.transform.parent = recipients[i];
                         totem.orb.GetComponent<Rigidbody>().isKinematic = true;
+                        orbEnter.Play();
                         totem.orb.transform.DOLocalMove(new Vector3(0, 0, 0), 2);
                         totem.orb.transform.DOScale(orbScale, 1);
+
 
                     }
                     else if (!totem.orb.CompareTag(totem.name))

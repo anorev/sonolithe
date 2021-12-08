@@ -26,6 +26,7 @@ public class PlayerBehavior : MonoBehaviour
     bool _isGrounded;
     float _jumpHeight = 3.0f;
     public bool activeControls;
+    private bool isMoving; 
 
     Vector3 _velocity;
 
@@ -66,9 +67,11 @@ public class PlayerBehavior : MonoBehaviour
     {
         float x = playerInput.CharacterControls.Move.ReadValue<Vector2>().x;
         float z = playerInput.CharacterControls.Move.ReadValue<Vector2>().y;
-
+        // isMoving = Mathf.Abs(x+z)!=0;
         Vector3 move = gameObject.transform.right * x + gameObject.transform.forward * z;
         _characterController.Move(move * _moveSpeed * Time.deltaTime);
+
+        isMoving = move.magnitude > 0;
     }
 
     void PlayerBehaviorCheckGround()
@@ -82,6 +85,16 @@ public class PlayerBehavior : MonoBehaviour
         _velocity.y += _gravity * Time.deltaTime;
 
         _characterController.Move(_velocity * Time.deltaTime);
+    }
+
+    public bool IsMoving() 
+    {
+        return isMoving;
+    }
+
+    public bool IsGrounded() 
+    {
+        return _isGrounded;
     }
 
     void PlayerBehaviorHandleJump()
