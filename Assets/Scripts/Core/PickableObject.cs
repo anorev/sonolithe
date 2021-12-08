@@ -90,37 +90,10 @@ public class PickableObject : MonoBehaviour
 
                 }
             }
-            /*
-                        else
-                        {
-                            orbTorch.enabled = false;
-                        }
-
-                        if(beingCarried) {
-                            objTorch.SetActive(orbTorch.activeSelf);
-                            Debug.Log(orbTorch.activeSelf);
-                            orbTorch.enabled = true;
-                        } else {
-                            orbTorch.enabled = false;
-                            objTorch.SetActive(!orbTorch.activeSelf);
-
-                        }
-            */
 
 
         }
 
-
-        // si on porte objet 
-        if (touched)
-        {
-            //si objet touche mur / collider 
-            GetComponent<Rigidbody>().isKinematic = false;
-            transform.parent = null;
-            beingCarried = false;
-            GetComponent<OrbController>().Drop();
-
-        }
     }
     void OnEnable()
     {

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- using TMPro;
 
 public class OrbController : MonoBehaviour
 {
@@ -24,7 +23,6 @@ public class OrbController : MonoBehaviour
     public float timeBetweenShots = 0.25f;
     float timer;
 
-    public TextMeshProUGUI orbHelp;
 
     // Start is called before the first frame update
     void Start()
@@ -69,21 +67,5 @@ public class OrbController : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other) 
-    {   
-        orbHelp = GetComponent<TextMeshProUGUI>();
-        if (other.CompareTag("Player")) 
-        {
-            orbHelp.gameObject.SetActive(true);
-        }
-    }
-
-        private void OnTriggerExit(Collider other) 
-    {
-        orbHelp = GetComponent<TextMeshProUGUI>();
-        if (other.CompareTag("Player")) 
-        {
-            orbHelp.gameObject.SetActive(false);
-        }
-    }
+   
 }
