@@ -16,9 +16,6 @@ public class OrbController : MonoBehaviour
     public AudioSource pickup; 
 
     public AudioSource pulseSource;
-    
-    [SerializeField]
-    public AudioClip[] audioClipArray;
 
     public float timeBetweenShots = 0.25f;
     float timer;
@@ -28,7 +25,7 @@ public class OrbController : MonoBehaviour
     void Start()
     {
         orbTorch = transform.Find("Torch").gameObject;
-         _emissionColor = transform.Find("signal.001").gameObject.GetComponent<Renderer>().material.GetColor("_EmissionColor");
+        _emissionColor = transform.Find("signal.001").gameObject.GetComponent<Renderer>().material.GetColor("_EmissionColor");
         //InvokeRepeating("ChangeColor", 1.0f, 1.0f);
     }
 
@@ -38,18 +35,13 @@ public class OrbController : MonoBehaviour
         float emissionIntensity=Mathf.Sin(Time.time * pulseTempo)*0.5f+0.5f;
         transform.Find("signal.001").gameObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", _emissionColor * emissionIntensity);
     
-        // timer += Time.deltaTime;
-        // if (timer > timeBetweenShots)
-        // {
-        //     audioSource.PlayOneShot();
-        //     timer = 0;
-        // }
+        timer += Time.deltaTime;
+        if (timer > timeBetweenShots)
+        {
+            pulseSource.Play();
+            timer = 0;
+        }
     }
-
-    // public AudioClip GetPulseAudioClip()
-    // {
-        
-    // }
 
     public void Pickup()
     {

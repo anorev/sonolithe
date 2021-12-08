@@ -206,13 +206,13 @@ MonoBehaviour:
   pickup: {fileID: 642037089457287260}
   pulseSource: {fileID: 0}
   audioClipArray:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: ea4d4d1d6ae98f54884fbdbfc71ea85b, type: 3}
+  - {fileID: 8300000, guid: 3c1b87e86cff61a47bec41e835bbc3d6, type: 3}
+  - {fileID: 8300000, guid: b469c0ffc13eb8247b0d921a5e33b41b, type: 3}
+  - {fileID: 8300000, guid: f4e74e7c565794f4e992c9438c7e6613, type: 3}
+  - {fileID: 8300000, guid: 13dff8f008f4c264ea1b2c1b48f35f0f, type: 3}
+  - {fileID: 8300000, guid: 7176f9d8526f5654897b65afddbd7cd9, type: 3}
   timeBetweenShots: 0.25
-  orbHelp: {fileID: 0}
 --- !u!65 &2405025849345626424
 BoxCollider:
   m_ObjectHideFlags: 0

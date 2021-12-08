@@ -31,9 +31,8 @@ public class TotemController : MonoBehaviour
     {
 
 
-        if (!totem.isPickup && totem.orb &&Vector3.Distance(transform.position, totem.orb.transform.position) <= 5f)
+        if (!totem.isPickup && totem.orb && Vector3.Distance(transform.position, totem.orb.transform.position) <= 5f)
         {
-          
                 for (int i = 0; i < 3; i++)
                 {
                     if (recipients[i].childCount == 0 && totem.orb.CompareTag(totem.name))
@@ -43,12 +42,11 @@ public class TotemController : MonoBehaviour
                         orbEnter.Play();
                         totem.orb.transform.DOLocalMove(new Vector3(0, 0, 0), 2);
                         totem.orb.transform.DOScale(orbScale, 1);
-
-
+                        // ici arreter clignote 
+                        // ici sop pulse son 
                     }
                     else if (!totem.orb.CompareTag(totem.name))
                     {
-
                         totem.orb.transform.DOShakeRotation(0.5f, 0.5f, 10, fadeOut: true);
                     }
                     if (checkTotem() && !isEventSent)
