@@ -7,14 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Nervure_mat2
-  m_Shader: {fileID: -6465566751694194690, guid: 9bd0132e5cb095d499f606ae35b94bbf,
+  m_Name: Totem2
+  m_Shader: {fileID: -6465566751694194690, guid: 97f2f0fc566402047ad0d9b1992f5d3f,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:

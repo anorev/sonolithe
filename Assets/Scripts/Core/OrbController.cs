@@ -29,6 +29,7 @@ public class OrbController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        totem.orb = gameObject;
         orbTorch = transform.Find("Torch").gameObject;
         // _emissionColor = transform.Find("signal.001").gameObject.GetComponent<Renderer>().material.GetColor("_EmissionColor");
         // InvokeRepeating("ChangeColor", 1.0f, 1.0f);

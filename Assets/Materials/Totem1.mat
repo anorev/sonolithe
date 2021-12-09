@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Nervure_mat3
+  m_Name: Totem1
   m_Shader: {fileID: -6465566751694194690, guid: 9bd0132e5cb095d499f606ae35b94bbf,
     type: 3}
   m_ShaderKeywords: 

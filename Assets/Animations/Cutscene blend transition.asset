@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CustomBlends:
   - m_From: FPS cam
-    m_To: Cutscene cam
+    m_To: End Cutscene cam
     m_Blend:
       m_Style: 1
       m_Time: 5
