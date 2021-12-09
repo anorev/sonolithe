@@ -8,6 +8,7 @@ public class TotemCompletionManager : MonoBehaviour
 {
     public TotemCompletion[] totemCompletionArray;
     public List<bool> booleanArray;
+    public GameObject portalSphere;
 
     // Start is called before the first frame update
     void Start()
@@ -16,10 +17,12 @@ public class TotemCompletionManager : MonoBehaviour
         {
             totemCompletionArray[i].OnTotemCompleted += CheckTotemTotal;
         }
+
     }
 
+
     // Update is called once per frame
-    private void CheckTotemTotal(bool isTotemCompleted,string name)
+    private void CheckTotemTotal(bool isTotemCompleted, string name)
     {
         booleanArray.Add(isTotemCompleted);
 
