@@ -11,14 +11,16 @@ public class OrbController : MonoBehaviour
     private Color _emissionColor;
 
     [SerializeField]
-    public AudioSource drop; 
+    public AudioSource drop;
     [SerializeField]
-    public AudioSource pickup; 
+    public AudioSource pickup;
+
+    [SerializeField]
+    public AudioSource orbEnter;
+    [SerializeField]
+    public AudioSource orbTrack;
 
     public AudioSource pulseSource;
-    
-    [SerializeField]
-    public AudioClip[] audioClipArray;
 
     public float timeBetweenShots = 0.25f;
     float timer;
@@ -28,28 +30,24 @@ public class OrbController : MonoBehaviour
     void Start()
     {
         orbTorch = transform.Find("Torch").gameObject;
-         _emissionColor = transform.Find("signal.001").gameObject.GetComponent<Renderer>().material.GetColor("_EmissionColor");
+        _emissionColor = transform.Find("signal.001").gameObject.GetComponent<Renderer>().material.GetColor("_EmissionColor");
         //InvokeRepeating("ChangeColor", 1.0f, 1.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        float emissionIntensity=Mathf.Sin(Time.time * pulseTempo)*0.5f+0.5f;
-        transform.Find("signal.001").gameObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", _emissionColor * emissionIntensity);
-    
-        // timer += Time.deltaTime;
-        // if (timer > timeBetweenShots)
-        // {
-        //     audioSource.PlayOneShot();
-        //     timer = 0;
-        // }
-    }
 
-    // public AudioClip GetPulseAudioClip()
-    // {
-        
-    // }
+
+        timer += Time.deltaTime;
+        if (timer > timeBetweenShots)
+        {
+            float emissionIntensity = Mathf.Sin(Time.time * pulseTempo) * 0.5f + 0.5f;
+            transform.Find("signal.001").gameObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", _emissionColor * emissionIntensity);
+            pulseSource.Play();
+            timer = 0;
+        }
+    }
 
     public void Pickup()
     {
@@ -64,8 +62,7 @@ public class OrbController : MonoBehaviour
         totem.isPickup = false;
         orbTorch.SetActive(false);
         drop.Play(); // TODO: Make collision sound 
-
     }
 
-   
+
 }

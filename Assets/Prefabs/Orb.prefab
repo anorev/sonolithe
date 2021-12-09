@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1810699156}
   - component: {fileID: 1810699158}
   - component: {fileID: 1810699157}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,8 +131,7 @@ GameObject:
   - component: {fileID: 642037089457287260}
   - component: {fileID: 6420951267958185826}
   - component: {fileID: 4182135750371925194}
-  - component: {fileID: 2911958964286855428}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Orb
   m_TagString: Totem1
   m_Icon: {fileID: 0}
@@ -204,15 +203,10 @@ MonoBehaviour:
   pulseTempo: 1
   drop: {fileID: 6420951267958185826}
   pickup: {fileID: 642037089457287260}
+  orbEnter: {fileID: 0}
+  orbTrack: {fileID: 0}
   pulseSource: {fileID: 0}
-  audioClipArray:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   timeBetweenShots: 0.25
-  orbHelp: {fileID: 0}
 --- !u!65 &2405025849345626424
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -514,19 +508,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!65 &2911958964286855428
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1026272770321820787}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.5, z: 1.5}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4582967930742528256
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +519,7 @@ GameObject:
   - component: {fileID: 5032987747210085557}
   - component: {fileID: 4975241298889462678}
   - component: {fileID: 8256640350401274207}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +569,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4263ff608f66c48658353f77b666ee39, type: 2}
+  - {fileID: 2100000, guid: f8ba26d33eb35475c97d077aa9276907, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -622,7 +603,7 @@ GameObject:
   - component: {fileID: 3548237962767511763}
   - component: {fileID: 6882209494614389095}
   - component: {fileID: 216001757753184548}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: signal.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +653,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0e9bec4cdacfb4211b241887c15ece13, type: 2}
+  - {fileID: 2100000, guid: 08c80d19a83fc47c0819809d46af9ea0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

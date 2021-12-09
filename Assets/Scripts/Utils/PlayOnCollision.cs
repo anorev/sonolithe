@@ -6,15 +6,14 @@ public class PlayOnCollision : MonoBehaviour
 {
     [SerializeField]
     public AudioSource audioSource;
+    bool _hasBeenPlayed;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && !audioSource.isPlaying)
+        if (other.tag == "Player" && !audioSource.isPlaying && !_hasBeenPlayed)
         {
             audioSource.Play();
-            // if(!audioSource.isPlaying) {
-            //     audioSource.Mute = true;
-            // }
+            _hasBeenPlayed = true;
         }
     }
 }

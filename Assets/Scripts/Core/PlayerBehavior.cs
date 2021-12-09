@@ -101,7 +101,6 @@ public class PlayerBehavior : MonoBehaviour
     {
         if (playerInput.CharacterControls.Jump.triggered && _isGrounded)
         {
-            Debug.Log("aaa");
             _velocity.y = Mathf.Sqrt(_jumpHeight * -2 * _gravity);
         }
     }

@@ -7,6 +7,7 @@ using DG.Tweening;
 public class HelpUITrigger : MonoBehaviour
 {
         public TextMeshProUGUI orbHelp;
+    private bool _hasBeenDisplayed;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +23,10 @@ public class HelpUITrigger : MonoBehaviour
 
      private void OnTriggerEnter(Collider other) 
     {   
-        if (other.CompareTag("Player")) 
+        if (other.CompareTag("Player") && !_hasBeenDisplayed) 
         {
             orbHelp.gameObject.SetActive(true);
+            _hasBeenDisplayed = true;
         }
     }
 

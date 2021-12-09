@@ -8,7 +8,16 @@ public class TotemController : MonoBehaviour
     public TotemCompletion totem;
     public Transform[] recipients;
     PlayerInput playerInput;
+    Vector3 orbScale;
     private bool isEventSent;
+
+    [SerializeField]
+    public AudioSource totemTrack;
+
+    public AudioClip[] audioClipArray;
+
+    [SerializeField]
+    public AudioSource orbEnter;
     // Start is called before the first frame update
     void Awake()
     {
@@ -19,6 +28,9 @@ public class TotemController : MonoBehaviour
     void Start()
     {
         recipients = transform.Find("Recipients").GetComponentsInChildren<Transform>();
+        orbScale = new Vector3(4f, 4f, 4f);
+        // totemTrack.clip = audioClipArray[0];
+        totemTrack.Play();
     }
 
     // Update is called once per frame
@@ -29,7 +41,7 @@ public class TotemController : MonoBehaviour
         if (!totem.isPickup && totem.orb && Vector3.Distance(transform.position, totem.orb.transform.position) <= 5f)
         {
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < recipients.Length; i++)
             {
                 if (recipients[i].childCount == 0 && totem.orb.CompareTag(totem.name))
                 {
@@ -38,8 +50,23 @@ public class TotemController : MonoBehaviour
 
                     totem.orb.GetComponent<Rigidbody>().isKinematic = true;
                     totem.orb.transform.DOLocalMove(new Vector3(0, 0, 0), 2);
-                    totem.orb.transform.localScale = totem.orbScale;
-                    AddOrb();
+                    totem.orb.transform.DOScale(orbScale, 1);
+                    //Robin son
+                    if (recipients[0].childCount == 1 && recipients[1].childCount == 0)
+                    {
+                        totemTrack.clip = audioClipArray[1];
+                        Debug.Log("CHANGE LE SON == HALF");
+                    }
+                    else if (recipients[0].childCount == 1 && recipients[1].childCount == 1)
+                    {
+                        totemTrack.clip = audioClipArray[2];
+
+                    }
+
+                    totemTrack.Play();
+
+                    //Pierre nervures
+                    AddOrbVeinAnimation();
 
                 }
                 else if (!totem.orb.CompareTag(totem.name))
@@ -68,7 +95,7 @@ public class TotemController : MonoBehaviour
         return true;
     }
 
-    public void AddOrb()
+    public void AddOrbVeinAnimation()
     {
         if (transform.Find("nervure").GetComponent<Renderer>().material.GetFloat("_Progress") < 0.5)
         {
