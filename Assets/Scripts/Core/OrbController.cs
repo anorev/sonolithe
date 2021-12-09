@@ -17,12 +17,12 @@ public class OrbController : MonoBehaviour
 
     [SerializeField]
     public AudioSource orbEnter;
-    [SerializeField]
-    public AudioSource orbTrack;
+    // [SerializeField]
+    // public AudioSource orbTrack;
 
     public AudioSource pulseSource;
 
-    public float timeBetweenShots = 0.25f;
+    public float timeBetweenShots = 5f;
     float timer;
 
 
@@ -30,8 +30,8 @@ public class OrbController : MonoBehaviour
     void Start()
     {
         orbTorch = transform.Find("Torch").gameObject;
-        _emissionColor = transform.Find("signal.001").gameObject.GetComponent<Renderer>().material.GetColor("_EmissionColor");
-        //InvokeRepeating("ChangeColor", 1.0f, 1.0f);
+        // _emissionColor = transform.Find("signal.001").gameObject.GetComponent<Renderer>().material.GetColor("_EmissionColor");
+        // InvokeRepeating("ChangeColor", 1.0f, 1.0f);
     }
 
     // Update is called once per frame
@@ -44,7 +44,7 @@ public class OrbController : MonoBehaviour
         {
             float emissionIntensity = Mathf.Sin(Time.time * pulseTempo) * 0.5f + 0.5f;
             transform.Find("signal.001").gameObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", _emissionColor * emissionIntensity);
-            pulseSource.Play();
+            // pulseSource.Play();
             timer = 0;
         }
     }

@@ -205,7 +205,7 @@ MonoBehaviour:
   pickup: {fileID: 642037089457287260}
   orbEnter: {fileID: 0}
   orbTrack: {fileID: 0}
-  pulseSource: {fileID: 0}
+  pulseSource: {fileID: 4182135750371925194}
   timeBetweenShots: 0.25
 --- !u!65 &2405025849345626424
 BoxCollider:

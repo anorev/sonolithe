@@ -27,10 +27,13 @@ public class TotemController : MonoBehaviour
 
     void Start()
     {
-        recipients = transform.Find("Recipients").GetComponentsInChildren<Transform>();
+        recipients = new Transform[] {transform.Find("Recipients").Find("Recipient 1"), transform.Find("Recipients").Find("Recipient 2")};
+        // recipients = transform.Find("Recipients").GetComponentsInChildren<Transform>();
         orbScale = new Vector3(4f, 4f, 4f);
         // totemTrack.clip = audioClipArray[0];
         totemTrack.Play();
+        Debug.Log("ON START >>>>>" + recipients[0].childCount);
+
     }
 
     // Update is called once per frame
@@ -43,6 +46,7 @@ public class TotemController : MonoBehaviour
 
             for (int i = 0; i < recipients.Length; i++)
             {
+                Debug.Log(recipients[0].childCount);
                 if (recipients[i].childCount == 0 && totem.orb.CompareTag(totem.name))
                 {
                     totem.orb.transform.parent = recipients[i];
@@ -52,15 +56,17 @@ public class TotemController : MonoBehaviour
                     totem.orb.transform.DOLocalMove(new Vector3(0, 0, 0), 2);
                     totem.orb.transform.DOScale(orbScale, 1);
                     //Robin son
+
                     if (recipients[0].childCount == 1 && recipients[1].childCount == 0)
                     {
+                        Debug.Log(recipients[0].childCount);
                         totemTrack.clip = audioClipArray[1];
                         Debug.Log("CHANGE LE SON == HALF");
                     }
                     else if (recipients[0].childCount == 1 && recipients[1].childCount == 1)
                     {
                         totemTrack.clip = audioClipArray[2];
-
+                        Debug.Log("CHANGE LE SON == HALF");
                     }
 
                     totemTrack.Play();
