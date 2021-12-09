@@ -244,7 +244,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275882292}
-  m_LocalRotation: {x: 0.000000031664968, y: -0.000000044703484, z: -0.000000029802322,
+  m_LocalRotation: {x: -0.00000003073365, y: 0.000000044703487, z: 0.000000029802326,
     w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -472,7 +472,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 200
-  DopplerLevel: 0.44
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 45
   Pan2D: 0
@@ -1112,6 +1112,14 @@ PrefabInstance:
       propertyPath: orbHelp
       value: 
       objectReference: {fileID: 1659521639}
+    - target: {fileID: 1980029325, guid: 736a1455425554839859e6695354f901, type: 3}
+      propertyPath: pulseTempo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980029325, guid: 736a1455425554839859e6695354f901, type: 3}
+      propertyPath: timeBetweenShots
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 216001758614373535, guid: 736a1455425554839859e6695354f901,
         type: 3}
       propertyPath: player
@@ -1130,7 +1138,7 @@ PrefabInstance:
     - target: {fileID: 393463574112007881, guid: 736a1455425554839859e6695354f901,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.36
+      value: -66.91
       objectReference: {fileID: 0}
     - target: {fileID: 393463574112007881, guid: 736a1455425554839859e6695354f901,
         type: 3}
@@ -1182,6 +1190,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Orb2 Totem1
       objectReference: {fileID: 0}
+    - target: {fileID: 4182135750371925194, guid: 736a1455425554839859e6695354f901,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c1b87e86cff61a47bec41e835bbc3d6, type: 3}
     - target: {fileID: 6882209494614389095, guid: 736a1455425554839859e6695354f901,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1414,12 +1427,12 @@ PrefabInstance:
     - target: {fileID: 7055002836716159414, guid: c6772572dfc134f1c910e01217983693,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.17182794
+      value: -0.17182799
       objectReference: {fileID: 0}
     - target: {fileID: 7055002836716159414, guid: c6772572dfc134f1c910e01217983693,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.063464545
+      value: 0.06346457
       objectReference: {fileID: 0}
     - target: {fileID: 7055002836716159414, guid: c6772572dfc134f1c910e01217983693,
         type: 3}
@@ -1429,7 +1442,7 @@ PrefabInstance:
     - target: {fileID: 7055002836716159414, guid: c6772572dfc134f1c910e01217983693,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.34060985
+      value: 0.34060988
       objectReference: {fileID: 0}
     - target: {fileID: 7055002836716159414, guid: c6772572dfc134f1c910e01217983693,
         type: 3}
@@ -1473,6 +1486,14 @@ PrefabInstance:
       propertyPath: orbHelp
       value: 
       objectReference: {fileID: 1659521639}
+    - target: {fileID: 1980029325, guid: 736a1455425554839859e6695354f901, type: 3}
+      propertyPath: pulseTempo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980029325, guid: 736a1455425554839859e6695354f901, type: 3}
+      propertyPath: timeBetweenShots
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 216001758614373535, guid: 736a1455425554839859e6695354f901,
         type: 3}
       propertyPath: player
@@ -1548,6 +1569,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Totem2
       objectReference: {fileID: 0}
+    - target: {fileID: 4182135750371925194, guid: 736a1455425554839859e6695354f901,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b469c0ffc13eb8247b0d921a5e33b41b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 736a1455425554839859e6695354f901, type: 3}
 --- !u!1 &956387888
@@ -2489,6 +2515,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!82 &1484666085 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4408232657068249274, guid: 736a1455425554839859e6695354f901,
+    type: 3}
+  m_PrefabInstance: {fileID: 1941732457}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1488312933
 GameObject:
   m_ObjectHideFlags: 0
@@ -2671,6 +2703,14 @@ PrefabInstance:
       propertyPath: orbHelp
       value: 
       objectReference: {fileID: 1659521639}
+    - target: {fileID: 1980029325, guid: 736a1455425554839859e6695354f901, type: 3}
+      propertyPath: pulseTempo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980029325, guid: 736a1455425554839859e6695354f901, type: 3}
+      propertyPath: timeBetweenShots
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 216001758614373535, guid: 736a1455425554839859e6695354f901,
         type: 3}
       propertyPath: player
@@ -2689,7 +2729,7 @@ PrefabInstance:
     - target: {fileID: 393463574112007881, guid: 736a1455425554839859e6695354f901,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8
+      value: -2.4
       objectReference: {fileID: 0}
     - target: {fileID: 393463574112007881, guid: 736a1455425554839859e6695354f901,
         type: 3}
@@ -2699,7 +2739,7 @@ PrefabInstance:
     - target: {fileID: 393463574112007881, guid: 736a1455425554839859e6695354f901,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -77.6
+      value: -78
       objectReference: {fileID: 0}
     - target: {fileID: 393463574112007881, guid: 736a1455425554839859e6695354f901,
         type: 3}
@@ -2746,6 +2786,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Totem3
       objectReference: {fileID: 0}
+    - target: {fileID: 4182135750371925194, guid: 736a1455425554839859e6695354f901,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7176f9d8526f5654897b65afddbd7cd9, type: 3}
     - target: {fileID: 6882209494614389095, guid: 736a1455425554839859e6695354f901,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2772,7 +2817,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 200
-  DopplerLevel: 0.44
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 45
   Pan2D: 0
@@ -3232,7 +3277,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 646492143}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1779193170
 PrefabInstance:
@@ -3258,6 +3303,14 @@ PrefabInstance:
       propertyPath: orbHelp
       value: 
       objectReference: {fileID: 1659521639}
+    - target: {fileID: 1980029325, guid: 736a1455425554839859e6695354f901, type: 3}
+      propertyPath: pulseTempo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980029325, guid: 736a1455425554839859e6695354f901, type: 3}
+      propertyPath: timeBetweenShots
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 216001758614373535, guid: 736a1455425554839859e6695354f901,
         type: 3}
       propertyPath: player
@@ -3348,6 +3401,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Totem3
       objectReference: {fileID: 0}
+    - target: {fileID: 4182135750371925194, guid: 736a1455425554839859e6695354f901,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 13dff8f008f4c264ea1b2c1b48f35f0f, type: 3}
     - target: {fileID: 6882209494614389095, guid: 736a1455425554839859e6695354f901,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3379,6 +3437,14 @@ PrefabInstance:
       propertyPath: orbHelp
       value: 
       objectReference: {fileID: 1659521639}
+    - target: {fileID: 1980029325, guid: 736a1455425554839859e6695354f901, type: 3}
+      propertyPath: pulseTempo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980029325, guid: 736a1455425554839859e6695354f901, type: 3}
+      propertyPath: timeBetweenShots
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 216001758614373535, guid: 736a1455425554839859e6695354f901,
         type: 3}
       propertyPath: player
@@ -3454,6 +3520,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Totem2
       objectReference: {fileID: 0}
+    - target: {fileID: 4182135750371925194, guid: 736a1455425554839859e6695354f901,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f4e74e7c565794f4e992c9438c7e6613, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 736a1455425554839859e6695354f901, type: 3}
 --- !u!1 &1940516230
@@ -3577,12 +3648,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1980029325, guid: 736a1455425554839859e6695354f901, type: 3}
+      propertyPath: orbEnter
+      value: 
+      objectReference: {fileID: 1484666085}
+    - target: {fileID: 1980029325, guid: 736a1455425554839859e6695354f901, type: 3}
       propertyPath: pulseTempo
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1980029325, guid: 736a1455425554839859e6695354f901, type: 3}
       propertyPath: timeBetweenShots
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 216001758614373535, guid: 736a1455425554839859e6695354f901,
         type: 3}
@@ -3653,6 +3728,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Orb Start Totem1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182135750371925194, guid: 736a1455425554839859e6695354f901,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.709
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 736a1455425554839859e6695354f901, type: 3}

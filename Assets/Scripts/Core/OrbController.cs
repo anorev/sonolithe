@@ -21,8 +21,8 @@ public class OrbController : MonoBehaviour
     // public AudioSource orbTrack;
 
     public AudioSource pulseSource;
-
-    public float timeBetweenShots = 5f;
+    [SerializeField]
+    public float timeBetweenShots;
     float timer;
 
 
@@ -30,7 +30,7 @@ public class OrbController : MonoBehaviour
     void Start()
     {
         orbTorch = transform.Find("Torch").gameObject;
-        // _emissionColor = transform.Find("signal.001").gameObject.GetComponent<Renderer>().material.GetColor("_EmissionColor");
+        // _emissionColor = transform.Find("Sphere.001").gameObject.GetComponent<Renderer>().material.GetColor("_EmissionColor");
         // InvokeRepeating("ChangeColor", 1.0f, 1.0f);
     }
 
@@ -43,8 +43,8 @@ public class OrbController : MonoBehaviour
         if (timer > timeBetweenShots)
         {
             float emissionIntensity = Mathf.Sin(Time.time * pulseTempo) * 0.5f + 0.5f;
-            transform.Find("signal.001").gameObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", _emissionColor * emissionIntensity);
-            // pulseSource.Play();
+            transform.Find("Sphere.001").gameObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", _emissionColor * emissionIntensity);
+            pulseSource.Play();
             timer = 0;
         }
     }
@@ -63,6 +63,12 @@ public class OrbController : MonoBehaviour
         orbTorch.SetActive(false);
         drop.Play(); // TODO: Make collision sound 
     }
+
+    // void OnCollisionEnter(Collision collision, AudioSource audioSource)
+    // {
+    //     if(collision.relativeVelocity.magnitude > 1)
+    //         audioSource.Play();
+    // }
 
 
 }
