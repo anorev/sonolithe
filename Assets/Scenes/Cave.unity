@@ -244,7 +244,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275882292}
-  m_LocalRotation: {x: -0.00000003073365, y: 0.000000044703487, z: 0.000000029802326,
+  m_LocalRotation: {x: 0.000000031664968, y: -0.000000044703484, z: -0.000000029802322,
     w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -283,7 +283,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0887785, y: 1}
+    m_SensorSize: {x: 1.8082386, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1427,12 +1427,12 @@ PrefabInstance:
     - target: {fileID: 7055002836716159414, guid: c6772572dfc134f1c910e01217983693,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.17182799
+      value: -0.17182794
       objectReference: {fileID: 0}
     - target: {fileID: 7055002836716159414, guid: c6772572dfc134f1c910e01217983693,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.06346457
+      value: 0.063464545
       objectReference: {fileID: 0}
     - target: {fileID: 7055002836716159414, guid: c6772572dfc134f1c910e01217983693,
         type: 3}
@@ -1442,7 +1442,7 @@ PrefabInstance:
     - target: {fileID: 7055002836716159414, guid: c6772572dfc134f1c910e01217983693,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.34060988
+      value: 0.34060985
       objectReference: {fileID: 0}
     - target: {fileID: 7055002836716159414, guid: c6772572dfc134f1c910e01217983693,
         type: 3}
@@ -1815,14 +1815,14 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bce9a49ef78f17543b09b5eb1ae76b42, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.105
+  m_Volume: 0.134
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 256
-  DopplerLevel: 1
+  Priority: 97
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -1859,7 +1859,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.099
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1938,9 +1938,9 @@ MonoBehaviour:
   _groundMask:
     serializedVersion: 2
     m_Bits: 1
-  _moveSpeed: 20
+  _moveSpeed: 12
   activeControls: 0
-  _mouseSensibility: 200
+  _mouseSensibility: 180
 --- !u!143 &1251151874 stripped
 CharacterController:
   m_CorrespondingSourceObject: {fileID: 7055002835599313527, guid: c6772572dfc134f1c910e01217983693,
@@ -1971,8 +1971,8 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 0
-  DopplerLevel: 1
+  Priority: 72
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -2056,13 +2056,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251151872}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af04650a0c29088479d890006f315a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1251151873}
   audio: {fileID: 1251151876}
+  delay: 1
 --- !u!54 &1251151878
 Rigidbody:
   m_ObjectHideFlags: 0
