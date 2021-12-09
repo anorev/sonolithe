@@ -30,7 +30,7 @@ public class Menu : MonoBehaviour
 
     private void EndReached()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     private IEnumerator Fade()

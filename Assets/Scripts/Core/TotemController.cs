@@ -8,18 +8,18 @@ public class TotemController : MonoBehaviour
     public TotemCompletion totem;
     public Transform[] recipients;
     PlayerInput playerInput;
-    Vector3 orbScale;
     private bool isEventSent;
 
     [SerializeField]
-    float distanceField;
-
-    AudioSource totemTrack;
+    public AudioSource totemTrack;
 
     public AudioClip[] audioClipArray;
 
     [SerializeField]
     public AudioSource orbEnter;
+
+    [SerializeField]
+    float distanceField;
     // Start is called before the first frame update
     void Awake()
     {
@@ -29,10 +29,9 @@ public class TotemController : MonoBehaviour
 
     void Start()
     {
-        recipients = new Transform[] {transform.Find("Recipients").Find("Recipient 1"), transform.Find("Recipients").Find("Recipient 2")};
+        recipients = new Transform[] { transform.Find("Recipients").Find("Recipient 1"), transform.Find("Recipients").Find("Recipient 2") };
         // recipients = transform.Find("Recipients").GetComponentsInChildren<Transform>();
-        orbScale = new Vector3(4f, 4f, 4f);
-        totemTrack.clip = audioClipArray[0];
+        // totemTrack.clip = audioClipArray[0];
         totemTrack.Play();
         Debug.Log("ON START >>>>>" + recipients[0].childCount);
 
@@ -41,6 +40,8 @@ public class TotemController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (!totem.isPickup && totem.orb && Vector3.Distance(transform.position, totem.orb.transform.position) <= distanceField)
         {
 
@@ -51,12 +52,13 @@ public class TotemController : MonoBehaviour
                 {
                     totem.orb.transform.parent = recipients[i];
                     totem.isPickup = true;
+
                     totem.orb.GetComponent<Rigidbody>().isKinematic = true;
                     totem.orb.transform.DOLocalMove(new Vector3(0, 0, 0), 2);
-                    totem.orb.transform.DOScale(orbScale, 1);
+                    totem.orb.transform.DOScale(totem.orbScale, 1);
                     //Robin son
 
-                 /*   if (recipients[0].childCount == 1 && recipients[1].childCount == 0)
+                    if (recipients[0].childCount == 1 && recipients[1].childCount == 0)
                     {
                         Debug.Log(recipients[0].childCount);
                         totemTrack.clip = audioClipArray[1];
@@ -68,7 +70,7 @@ public class TotemController : MonoBehaviour
                         Debug.Log("CHANGE LE SON == HALF");
                     }
 
-                    totemTrack.Play();*/
+                    totemTrack.Play();
 
                     //Pierre nervures
                     AddOrbVeinAnimation();
