@@ -33,10 +33,8 @@ public class TotemController : MonoBehaviour
             {
                 if (recipients[i].childCount == 0 && totem.orb.CompareTag(totem.name))
                 {
-                    Debug.Log(i + ":" + recipients[i].childCount);
                     totem.orb.transform.parent = recipients[i];
                     totem.isPickup = true;
-                    Debug.Log(i + ":" + recipients[i].childCount);
 
                     totem.orb.GetComponent<Rigidbody>().isKinematic = true;
                     totem.orb.transform.DOLocalMove(new Vector3(0, 0, 0), 2);
