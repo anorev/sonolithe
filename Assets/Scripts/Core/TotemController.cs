@@ -10,6 +10,11 @@ public class TotemController : MonoBehaviour
     PlayerInput playerInput;
     Vector3 orbScale;
     private bool isEventSent;
+    
+    [SerializeField]
+    public AudioSource totemTrack; 
+
+    public AudioClip[] audioClipArray;
 
     [SerializeField]
     public AudioSource orbEnter; 
@@ -24,6 +29,8 @@ public class TotemController : MonoBehaviour
     {
         recipients = transform.Find("Recipients").GetComponentsInChildren<Transform>();
         orbScale = new Vector3(4f, 4f, 4f);
+        // totemTrack.clip = audioClipArray[0];
+        totemTrack.Play();
     }
 
     // Update is called once per frame
@@ -33,7 +40,7 @@ public class TotemController : MonoBehaviour
 
         if (!totem.isPickup && totem.orb && Vector3.Distance(transform.position, totem.orb.transform.position) <= 5f)
         {
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < 2; i++)
                 {
                     if (recipients[i].childCount == 0 && totem.orb.CompareTag(totem.name))
                     {
@@ -44,6 +51,22 @@ public class TotemController : MonoBehaviour
                         totem.orb.transform.DOScale(orbScale, 1);
                         // ici arreter clignote 
                         // ici sop pulse son 
+                        // totem.orb.pulseSource.Stop();
+
+                        // totemTrack = orbTrack
+                        // totemTrack = totem.orb.orbTrack;
+                        // Debug.Log(totem.orb.orbEnter);
+
+                        if (recipients[0].childCount == 1 && recipients[1].childCount == 0) {
+                            totemTrack.clip = audioClipArray[1];
+                            Debug.Log("CHANGE LE SON == HALF");
+                        } else if (recipients[0].childCount == 1 && recipients[1].childCount == 1) {
+                            totemTrack.clip = audioClipArray[2];
+
+                        }
+
+                        totemTrack.Play();
+
                     }
                     else if (!totem.orb.CompareTag(totem.name))
                     {
@@ -57,6 +80,8 @@ public class TotemController : MonoBehaviour
                 }
         }
     }
+
+
     public bool checkTotem()
     {
         for (int i = 0; i < recipients.Length; ++i)

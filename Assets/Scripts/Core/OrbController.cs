@@ -15,6 +15,11 @@ public class OrbController : MonoBehaviour
     [SerializeField]
     public AudioSource pickup; 
 
+    [SerializeField]
+    public AudioSource orbEnter;    
+    [SerializeField]
+    public AudioSource orbTrack; 
+
     public AudioSource pulseSource;
 
     public float timeBetweenShots = 0.25f;
@@ -32,12 +37,13 @@ public class OrbController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float emissionIntensity=Mathf.Sin(Time.time * pulseTempo)*0.5f+0.5f;
-        transform.Find("signal.001").gameObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", _emissionColor * emissionIntensity);
+       
     
         timer += Time.deltaTime;
         if (timer > timeBetweenShots)
         {
+            float emissionIntensity=Mathf.Sin(Time.time * pulseTempo)*0.5f+0.5f;
+            transform.Find("signal.001").gameObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", _emissionColor * emissionIntensity);
             pulseSource.Play();
             timer = 0;
         }
@@ -56,7 +62,6 @@ public class OrbController : MonoBehaviour
         totem.isPickup = false;
         orbTorch.SetActive(false);
         drop.Play(); // TODO: Make collision sound 
-
     }
 
    
