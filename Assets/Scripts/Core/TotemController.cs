@@ -33,7 +33,11 @@ public class TotemController : MonoBehaviour
             {
                 if (recipients[i].childCount == 0 && totem.orb.CompareTag(totem.name))
                 {
+                    Debug.Log(i + ":" + recipients[i].childCount);
                     totem.orb.transform.parent = recipients[i];
+                    totem.isPickup = true;
+                    Debug.Log(i + ":" + recipients[i].childCount);
+
                     totem.orb.GetComponent<Rigidbody>().isKinematic = true;
                     totem.orb.transform.DOLocalMove(new Vector3(0, 0, 0), 2);
                     totem.orb.transform.localScale = totem.orbScale;
@@ -68,8 +72,14 @@ public class TotemController : MonoBehaviour
 
     public void AddOrb()
     {
+        if (transform.Find("nervure").GetComponent<Renderer>().material.GetFloat("_Progress") < 0.5)
+        {
             StartCoroutine(IncreaseVeinEmission(0.5f));
-            Debug.Log("aaa");
+        }
+        else
+        {
+            StartCoroutine(IncreaseVeinEmission(1f));
+        }
     }
 
 
@@ -92,21 +102,6 @@ public class TotemController : MonoBehaviour
         transform.Find("nervure").GetComponent<Renderer>().material.SetFloat("_Progress", target);
     }
 
-    /*   public IEnumerator IncreaseVeinEmission(float target)
-       {
-           float counter = 0f;
-           float duration = 5f;
-           float progress = transform.Find("nervure").GetComponent<Renderer>().material.GetFloat("_Progress");
-
-           while (counter < duration)
-           {
-               progress += 0.1f;
-               transform.Find("nervure").GetComponent<Renderer>().material.SetFloat("_Progress", progress);
-               counter += Time.deltaTime;
-
-               yield return null;
-           }
-       }*/
     void OnEnable()
     {
         playerInput.CharacterControls.Enable();
