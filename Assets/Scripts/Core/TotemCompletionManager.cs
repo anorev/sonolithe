@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-
+using Cinemachine;
 
 public class TotemCompletionManager : MonoBehaviour
 {
@@ -12,12 +12,23 @@ public class TotemCompletionManager : MonoBehaviour
     GameObject portalSphere;
     [SerializeField]
     private GameObject player;
+
     [SerializeField]
-    GameObject _FPSCamera;
-    [SerializeField]
-    GameObject _endCutsceneCamera;
+    CinemachineVirtualCamera endCutsceneCamera;
     [SerializeField]
     Light _endLight;
+    [SerializeField]
+    AudioSource _finalTrack;
+    [SerializeField]
+    GameObject totem3;
+    AudioSource _totem3Track;
+    [SerializeField]
+    GameObject totem2;
+    AudioSource _totem2Track;
+    [SerializeField]
+    GameObject totem1;
+    AudioSource _totem1Track;
+    bool lookAtIng = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,15 +38,24 @@ public class TotemCompletionManager : MonoBehaviour
             totemCompletionArray[i].OnTotemCompleted += CheckTotemTotal;
         }
 
+
+    }
+
+    private void Update()
+    {
+        if (lookAtIng)
+        {
+            GameObject.Find("Player").transform.LookAt(portalSphere.transform);
+        }
     }
 
     private void portalApparition()
     {
         _endLight.gameObject.SetActive(true);
-        _FPSCamera.SetActive(false);
-        _endCutsceneCamera.SetActive(true);
-        player.GetComponent<PlayerBehavior>().enabled = false;
-        Sequence seq = DOTween.Sequence();
+        lookAtIng = true;
+        endCutsceneCamera.m_LookAt = portalSphere.transform;
+       //player.GetComponent<PlayerBehavior>().enabled = false;
+       Sequence seq = DOTween.Sequence();
         seq.AppendInterval(5f).Append(portalSphere.transform.DOScale(
         3f, 2f).SetEase(Ease.InOutBounce))
        .AppendInterval(1f).Append(portalSphere.transform.DOMove(
@@ -46,28 +66,23 @@ public class TotemCompletionManager : MonoBehaviour
 
     }
 
-    private void pulseEmissionPortal()
-    {
-        /*  float timer;
-          timer += Time.deltaTime;
-          if (timer > timeBetweenShots)
-          {
-              float emissionIntensity = Mathf.Sin(Time.time * pulseTempo) * 0.5f + 0.5f;
-              transform.Find("signal.001").gameObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", _emissionColor * emissionIntensity);
-              pulseSource.Play();
-              timer = 0;
-          }*/
-    }
-    // Update is called once per frame
     private void CheckTotemTotal(bool isTotemCompleted, string name)
     {
         booleanArray.Add(isTotemCompleted);
 
+        //= totemCompletionArray.Length
 
-        if (booleanArray.Count >1)
+        if (booleanArray.Count >= totemCompletionArray.Length)
         {
+            _totem3Track = totem3.GetComponent<TotemController>().totemTrack;
+            _totem2Track = totem2.GetComponent<TotemController>().totemTrack;
+            _totem1Track = totem1.GetComponent<TotemController>().totemTrack;
+
+            _finalTrack.Play();
+            _totem3Track.Stop();
+            _totem2Track.Stop();
+            _totem1Track.Stop();
             portalApparition();
-            Debug.Log("Tous les totems sont complets");
 
         }
     }
