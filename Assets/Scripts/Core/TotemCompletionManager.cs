@@ -64,7 +64,7 @@ public class TotemCompletionManager : MonoBehaviour
         booleanArray.Add(isTotemCompleted);
 
 
-        if (booleanArray.Count >= totemCompletionArray.Length)
+        if (booleanArray.Count >1)
         {
             portalApparition();
             Debug.Log("Tous les totems sont complets");

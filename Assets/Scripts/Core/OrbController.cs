@@ -25,6 +25,8 @@ public class OrbController : MonoBehaviour
     public float timeBetweenShots;
     float timer;
 
+    bool hasPulseBeenStopped;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,15 +41,20 @@ public class OrbController : MonoBehaviour
 
 
         timer += Time.deltaTime;
-        if (timer > timeBetweenShots)
+        if (timer > timeBetweenShots && !transform.parent)
         {
             float emissionIntensity = Mathf.Sin(Time.time * pulseTempo) * 0.5f + 0.5f;
             transform.Find("Sphere.001").gameObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", _emissionColor * emissionIntensity);
             pulseSource.Play();
             timer = 0;
         }
- 
-}
+        else if (transform.parent && transform.parent.CompareTag("TotemModel") && !hasPulseBeenStopped)
+        {
+            pulseSource.Stop();
+            hasPulseBeenStopped = true;
+        }
+
+    }
 
     public void Pickup()
     {

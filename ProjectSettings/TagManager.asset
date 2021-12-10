@@ -8,6 +8,7 @@ TagManager:
   - Totem2
   - Totem3
   - UI
+  - TotemModel
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - LightOrb
   - Water
   - UI
-  - 
+  - Totem
   - 
   - 
   - 

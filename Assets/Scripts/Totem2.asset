@@ -16,3 +16,4 @@ MonoBehaviour:
   orb: {fileID: 0}
   isPickup: 0
   isComplete: 0
+  orbScale: {x: 4, y: 4, z: 4}

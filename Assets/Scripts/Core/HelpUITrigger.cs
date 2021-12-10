@@ -28,6 +28,10 @@ public class HelpUITrigger : MonoBehaviour
             orbHelp.gameObject.SetActive(true);
             _hasBeenDisplayed = true;
         }
+        if (other.name=="Orb Start Totem1")
+        {
+            orbHelp.gameObject.SetActive(false);
+        }
     }
 
         private void OnTriggerExit(Collider other) 

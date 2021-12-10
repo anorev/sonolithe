@@ -44,7 +44,7 @@ public class PickableObject : MonoBehaviour
         float dist = Vector3.Distance(transform.position, player.position);
 
         //si inferier ou �gal � 1.9 == on peut ramasser 
-        if (dist <= 4f)
+        if (dist <= 5f)
         {
             hasPlayer = true;
         }
@@ -62,7 +62,7 @@ public class PickableObject : MonoBehaviour
                 GetComponent<Rigidbody>().isKinematic = true;
                 Vector3 orbScale = transform.localScale;
                 transform.parent = playerCam;
-                transform.DOLocalMove(new Vector3(0, -0.1f, 2.5f), 0.3f);
+                transform.DOLocalMove(new Vector3(0, -0.1f, 2.8f), 0.3f);
                 transform.localScale = orbScale;
 
                 beingCarried = true;

@@ -20,10 +20,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ORBE
+  m_Name: ORBE 1
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON _EMISSION _NORMALMAP _SURFACE_TYPE_TRANSPARENT
-  m_LightmapFlags: 2
+  m_ShaderKeywords: _ALPHATEST_ON _SURFACE_TYPE_TRANSPARENT
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
   m_CustomRenderQueue: 3000
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: f04bb8e29bce74d9bbd332f854c733ff, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -125,7 +125,7 @@ Material:
     - Vector1_fafce1affd45498a89422f9fc2f95633: 0.569
     - _AlphaClip: 1
     - _Blend: 0
-    - _BumpScale: 10
+    - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 0
@@ -166,8 +166,8 @@ Material:
     - Color_f46a0b3d87b8437283234914888c58dd: {r: 0.8018868, g: 0, b: 0, a: 1}
     - Vector2_59f1d085e7b0460a96f6e8de16e51357: {r: 2, g: 1, b: 0, a: 0}
     - Vector2_91e8ce5b397e42099034bedae3ff0713: {r: 1, g: 0, b: 0, a: 0}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 0.23921569}
-    - _Color: {r: 1, g: 1, b: 1, a: 0.23921569}
+    - _BaseColor: {r: 0.7169812, g: 0.52420795, b: 0.52420795, a: 0.6156863}
+    - _Color: {r: 0.7169812, g: 0.5242079, b: 0.5242079, a: 0.6156863}
     - _EmissionColor: {r: 0.07647059, g: 0.05882353, b: 0.2647059, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _transparence: {r: 0, g: 3.2, b: 3.33, a: 1.65}
