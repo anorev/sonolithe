@@ -1,1 +1,0 @@
-# Gobelins Exquisite Corpse (Reboot)
